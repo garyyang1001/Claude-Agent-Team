@@ -1,0 +1,252 @@
+{
+  "workflow_configuration": {
+    "version": "1.0.0",
+    "last_updated": "2024-10-30",
+    "system_name": "Word Weaver AI - Agents Workflow",
+    "description": "Claude Sub Agents 多元框架內容創作系統配置"
+  },
+  
+  "agent_registry": {
+    "orchestrator": {
+      "master_workflow_agent": {
+        "role": "總指揮官",
+        "priority": 1,
+        "required": true,
+        "capabilities": ["需求分析", "路由決策", "品質控制", "流程協調"]
+      }
+    },
+    
+    "research_agents": {
+      "framework_selector_agent": {
+        "role": "框架選擇專家",
+        "priority": 2,
+        "required": true,
+        "capabilities": ["框架分析", "個性匹配", "效果預測"]
+      },
+      "audience_analyzer_agent": {
+        "role": "受眾分析專家", 
+        "priority": 2,
+        "required": true,
+        "capabilities": ["受眾畫像", "需求分析", "行為預測"]
+      },
+      "content_gap_analyst_agent": {
+        "role": "內容缺口分析專家",
+        "priority": 3,
+        "required": false,
+        "capabilities": ["市場分析", "競品研究", "機會識別"]
+      }
+    },
+    
+    "interview_agents": {
+      "interview_specialist_agent": {
+        "role": "深度訪談專家",
+        "priority": 2,
+        "required": true,
+        "capabilities": ["深度訪談", "素材提取", "洞察挖掘"]
+      }
+    },
+    
+    "framework_agents": {
+      "lead_method_agent": {
+        "role": "邏輯分析型寫作專家",
+        "framework": "LEAD",
+        "personality_match": ["理性邏輯型"],
+        "content_types": ["商業分析", "行業報告", "專業洞察"]
+      },
+      "heart_method_agent": {
+        "role": "情感故事型寫作專家", 
+        "framework": "HEART",
+        "personality_match": ["感性創意型"],
+        "content_types": ["個人成長", "品牌故事", "情感連結"]
+      },
+      "solve_method_agent": {
+        "role": "問題解決型寫作專家",
+        "framework": "SOLVE", 
+        "personality_match": ["實務導向型"],
+        "content_types": ["教學內容", "解決方案", "技術分享"]
+      },
+      "spark_method_agent": {
+        "role": "爭議討論型寫作專家",
+        "framework": "SPARK",
+        "personality_match": ["挑戰權威型"],
+        "content_types": ["行業觀點", "趨勢分析", "思想領導"]
+      },
+      "teach_method_agent": {
+        "role": "教育指導型寫作專家",
+        "framework": "TEACH",
+        "personality_match": ["知識分享型"],
+        "content_types": ["教學內容", "技能分享", "培訓材料"]
+      },
+      "story_method_agent": {
+        "role": "案例展示型寫作專家",
+        "framework": "STORY",
+        "personality_match": ["經驗分享型"],
+        "content_types": ["客戶案例", "項目復盤", "成功故事"]
+      },
+      "business_method_agent": {
+        "role": "B2B專業型寫作專家",
+        "framework": "BUSINESS",
+        "personality_match": ["商業導向型"],
+        "content_types": ["B2B銷售", "商業提案", "企業解決方案"]
+      },
+      "convert_method_agent": {
+        "role": "電商銷售型寫作專家",
+        "framework": "CONVERT",
+        "personality_match": ["銷售導向型"],
+        "content_types": ["產品銷售", "電商內容", "促銷活動"]
+      },
+      "personal_method_agent": {
+        "role": "個人品牌型寫作專家",
+        "framework": "PERSONAL",
+        "personality_match": ["個人品牌型"],
+        "content_types": ["個人品牌", "生活哲學", "影響力建立"]
+      },
+      "engage_method_agent": {
+        "role": "社群互動型寫作專家",
+        "framework": "ENGAGE", 
+        "personality_match": ["社交互動型"],
+        "content_types": ["社群內容", "互動貼文", "viral內容"]
+      }
+    },
+    
+    "optimization_agents": {
+      "content_optimizer_agent": {
+        "role": "內容優化專家",
+        "priority": 3,
+        "required": true,
+        "capabilities": ["內容潤飾", "結構優化", "語言精煉"]
+      },
+      "platform_customizer_agent": {
+        "role": "平台客製化專家",
+        "priority": 3, 
+        "required": false,
+        "capabilities": ["平台適配", "格式調整", "規範檢查"]
+      },
+      "quality_assurance_agent": {
+        "role": "品質保證專家",
+        "priority": 4,
+        "required": true,
+        "capabilities": ["品質檢查", "錯誤修正", "標準驗證"]
+      }
+    }
+  },
+  
+  "workflow_phases": {
+    "phase_1_discovery": {
+      "name": "發現階段",
+      "duration_minutes": 3,
+      "required_agents": ["master_workflow_agent", "framework_selector_agent", "audience_analyzer_agent"],
+      "optional_agents": ["content_gap_analyst_agent"],
+      "deliverables": ["用戶畫像", "框架選擇", "內容策略"]
+    },
+    
+    "phase_2_research": {
+      "name": "研究階段", 
+      "duration_minutes": 8,
+      "required_agents": ["interview_specialist_agent"],
+      "optional_agents": ["content_gap_analyst_agent"],
+      "deliverables": ["訪談記錄", "核心素材", "洞察提取"]
+    },
+    
+    "phase_3_creation": {
+      "name": "創作階段",
+      "duration_minutes": 7,
+      "required_agents": ["selected_framework_agent"],
+      "optional_agents": ["style_adaptation_agent"],
+      "deliverables": ["初版內容", "結構框架", "核心訊息"]
+    },
+    
+    "phase_4_optimization": {
+      "name": "優化階段",
+      "duration_minutes": 5,
+      "required_agents": ["content_optimizer_agent", "quality_assurance_agent"],
+      "optional_agents": ["platform_customizer_agent"],
+      "deliverables": ["最終內容", "品質報告", "優化建議"]
+    }
+  },
+  
+  "decision_matrix": {
+    "framework_selection": {
+      "criteria": {
+        "user_personality": 0.4,
+        "content_goal": 0.3,
+        "platform_type": 0.2,
+        "industry_context": 0.1
+      },
+      "personality_mapping": {
+        "理性邏輯型": ["LEAD", "SOLVE", "BUSINESS"],
+        "感性創意型": ["HEART", "PERSONAL", "STORY"],
+        "實務導向型": ["SOLVE", "TEACH", "CONVERT"],
+        "挑戰權威型": ["SPARK", "PERSONAL", "BUSINESS"],
+        "社交互動型": ["ENGAGE", "HEART", "SPARK"]
+      },
+      "goal_mapping": {
+        "建立權威": ["LEAD", "SPARK", "BUSINESS"],
+        "增加互動": ["HEART", "ENGAGE", "PERSONAL"],
+        "推廣產品": ["CONVERT", "BUSINESS", "SOLVE"],
+        "知識分享": ["TEACH", "SOLVE", "LEAD"],
+        "品牌建立": ["PERSONAL", "STORY", "HEART"]
+      },
+      "platform_mapping": {
+        "LinkedIn": ["BUSINESS", "SPARK", "LEAD"],
+        "Instagram": ["ENGAGE", "HEART", "PERSONAL"],
+        "Facebook": ["HEART", "ENGAGE", "PERSONAL"],
+        "YouTube": ["TEACH", "SOLVE", "STORY"],
+        "Blog": ["LEAD", "SOLVE", "TEACH"]
+      }
+    }
+  },
+  
+  "quality_standards": {
+    "content_requirements": {
+      "structure_completeness": 100,
+      "framework_adherence": 95,
+      "style_consistency": 95,
+      "goal_alignment": 90,
+      "readability_score": 85
+    },
+    
+    "performance_targets": {
+      "routing_accuracy": 95,
+      "completion_time_minutes": 20,
+      "user_satisfaction": 90,
+      "revision_count": 2
+    }
+  },
+  
+  "error_handling": {
+    "escalation_rules": {
+      "unclear_requirements": "調用 Interview_Specialist_Agent",
+      "framework_conflict": "多選項用戶確認",
+      "agent_failure": "備用 Agent 接管",
+      "quality_issues": "Quality_Assurance_Agent 重新處理"
+    },
+    
+    "fallback_options": {
+      "primary_framework_unavailable": "使用次優框架",
+      "agent_timeout": "簡化版本處理",
+      "user_dissatisfaction": "重新完整流程"
+    }
+  },
+  
+  "integration_points": {
+    "word_weaver_ai": {
+      "auth_system": "users/authentication",
+      "interview_system": "components/InterviewChat", 
+      "content_config": "components/ContentConfig",
+      "generated_content": "components/GeneratedContent"
+    },
+    
+    "knowledge_base": {
+      "frameworks_doc": "10_Diverse_Writing_Frameworks.md",
+      "quick_guide": "Framework_Quick_Guide.md",
+      "analysis_reports": ["PRD_Taiwan_Career_Influencer_Agent.md", "Content_Analysis_Report.md"],
+      "system_prompts": "Agent_System_Prompt.md"
+    },
+    
+    "external_apis": {
+      "gemini_api": "services/geminiService.ts",
+      "humanization_service": "services/humanizeService.ts"
+    }
+  }
+}
