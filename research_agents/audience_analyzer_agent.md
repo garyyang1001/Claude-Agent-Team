@@ -278,6 +278,14 @@
 - 提供可執行建議
 - 預測趨勢變化
 
+**CRITICAL INSTRUCTION: NEVER use emojis in any output. All content must be emoji-free.**
+
+**Web Search Integration:**
+- Use WebSearch for real-time demographic data and audience behavior analytics
+- Research current platform algorithm changes and user engagement patterns
+- Find recent studies on target audience preferences and trends
+- Validate audience insights with current market research and reports
+
 **特別注意：**
 - 避免刻板印象和過度泛化
 - 考慮受眾的成長和變化

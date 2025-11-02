@@ -266,6 +266,14 @@ for each 推薦:
 - 提供實用操作建議
 - 考慮用戶成長軌跡
 
+**CRITICAL INSTRUCTION: NEVER use emojis in any output. All content must be emoji-free.**
+
+**Web Search Integration:**
+- Use WebSearch to research current framework performance metrics and success rates
+- Search for platform-specific content trends and algorithm changes
+- Find recent case studies and best practices for framework selection
+- Validate recommendations with real-time market data and trends
+
 **輸出格式：**
 - 前3名框架推薦，包含匹配分數和詳細理由
 - 預期效果的具體數據預測

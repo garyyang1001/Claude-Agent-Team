@@ -1,44 +1,61 @@
 # Claude Sub Agents Workflow System - 系統總覽
 
-## 🎯 系統架構完成狀況
+## 系統架構完成狀況
 
-### ✅ 已完成組件 (100% 完成度)
+### 已完成組件 (100% 完成度)
 
-**📁 檔案結構：**
+**檔案結構：**
 ```
 /agents_workflow/
+├── Draft.md (⭐ 共享文檔 - 所有 agents 的協作中心)
 ├── /orchestrator/
-│   ├── ✅ master_workflow_agent.md (總指揮官)
-│   └── ✅ workflow_config.json (系統配置)
+│   ├── master_workflow_agent.md (總指揮官)
+│   └── workflow_config.json (系統配置)
 ├── /research_agents/
-│   ├── ✅ framework_selector_agent.md (框架選擇專家)
-│   ├── ✅ audience_analyzer_agent.md (受眾分析專家)
-│   └── ✅ content_gap_analyst_agent.md (內容缺口分析專家)
+│   ├── framework_selector_agent.md (框架選擇專家)
+│   ├── audience_analyzer_agent.md (受眾分析專家)
+│   └── content_gap_analyst_agent.md (內容缺口分析專家)
 ├── /interview_agents/
-│   └── ✅ interview_specialist_agent.md (深度訪談專家)
+│   └── interview_specialist_agent.md (深度訪談專家)
 ├── /framework_agents/
-│   ├── ✅ lead_method_agent.md (邏輯分析型專家)
-│   ├── ✅ heart_method_agent.md (情感故事型專家)
-│   ├── ✅ solve_method_agent.md (問題解決型專家)
-│   ├── ✅ spark_method_agent.md (爭議討論型專家)
-│   ├── ✅ teach_method_agent.md (教育指導型專家)
-│   ├── ✅ story_method_agent.md (案例展示型專家)
-│   ├── ✅ business_method_agent.md (B2B專業型專家)
-│   ├── ✅ convert_method_agent.md (電商銷售型專家)
-│   ├── ✅ personal_method_agent.md (個人品牌型專家)
-│   └── ✅ engage_method_agent.md (社群互動型專家)
+│   ├── lead_method_agent.md (邏輯分析型專家)
+│   ├── heart_method_agent.md (情感故事型專家)
+│   ├── solve_method_agent.md (問題解決型專家)
+│   ├── spark_method_agent.md (爭議討論型專家)
+│   ├── teach_method_agent.md (教育指導型專家)
+│   ├── story_method_agent.md (案例展示型專家)
+│   ├── business_method_agent.md (B2B專業型專家)
+│   ├── convert_method_agent.md (電商銷售型專家)
+│   ├── personal_method_agent.md (個人品牌型專家)
+│   └── engage_method_agent.md (社群互動型專家)
 ├── /optimization_agents/
-│   ├── ✅ content_optimizer_agent.md (內容優化專家)
-│   ├── ✅ platform_customizer_agent.md (平台客製化專家)
-│   └── ✅ quality_assurance_agent.md (品質保證專家)
+│   ├── content_optimizer_agent.md (內容優化專家)
+│   ├── platform_customizer_agent.md (平台客製化專家)
+│   └── quality_assurance_agent.md (品質保證專家)
 └── /workflow_docs/
-    ├── ✅ WORKFLOW_COORDINATION_PROTOCOLS.md (協調協議)
-    └── ✅ SYSTEM_INTEGRATION_GUIDE.md (系統整合指南)
+    ├── WORKFLOW_COORDINATION_PROTOCOLS.md (協調協議)
+    └── SYSTEM_INTEGRATION_GUIDE.md (系統整合指南)
 ```
 
-## 🤖 核心Agents介紹
+### ⭐ Draft.md 共享文檔系統
 
-### 🎭 Master Workflow Agent - 總指揮官
+**核心創新：** Draft.md 是所有 agents 的共享記憶，消除上下文流失問題。
+
+**工作原理：**
+1. **初始化：** Master Workflow Agent 在工作流開始時初始化 Draft.md
+2. **協作編輯：** 每個 agent 讀取 Draft.md 了解全局，然後更新自己的章節
+3. **檢查點驗證：** Boss Agent 在階段轉換時驗證 Draft.md 完整性
+4. **最終整合：** 從 Draft.md 提取最終內容呈現給用戶
+
+**優勢：**
+- ✅ **零上下文流失：** 所有 agents 看到完整工作流狀態
+- ✅ **進度透明：** 用戶隨時查看 Draft.md 了解進度
+- ✅ **完整審計：** 記錄每個 agent 的貢獻
+- ✅ **易於調試：** 快速定位上下文丟失的位置
+
+## 核心Agents介紹
+
+### Master Workflow Agent - 總指揮官
 **功能：** 整個系統的大腦，負責需求分析、智能路由、流程協調
 **核心能力：**
 - 用戶畫像深度分析（個性、目標、平台、產業）
@@ -51,7 +68,7 @@
 用戶輸入 → 需求分析 → 框架選擇 → Agent分配 → 品質控制
 ```
 
-### 🔍 Research Agents - 研究分析層
+### Research Agents - 研究分析層
 
 **Framework Selector Agent（框架選擇專家）**
 - 10種框架深度理解和個性匹配
@@ -81,9 +98,9 @@
 4. 情感故事提取（10分鐘）
 5. 未來展望收集（5分鐘）
 
-### 📝 Framework Writing Agents - 框架寫作專家層
+### Framework Writing Agents - 框架寫作專家層
 
-**✅ 已完成：全部10個專業框架agents**
+**已完成：全部10個專業框架agents**
 
 1. **LEAD Method Agent（邏輯分析型專家）**
    - 框架：Logic → Evidence → Analysis → Decision
@@ -125,7 +142,7 @@
     - 框架：Entertain → Network → Generate → Ask → Gamify → Exchange
     - 適合：社群經營者、互動愛好者、社群活躍度重視者
 
-## 🔄 工作流程設計
+## 工作流程設計
 
 ### Phase 1: Discovery（發現階段）3分鐘
 ```
@@ -154,7 +171,7 @@ Interview Specialist Agent → 深度訪談 → 素材收集和結構化
 輸出：最終內容、品質報告、優化建議、平台策略
 ```
 
-## 💡 核心創新亮點
+## 核心創新亮點
 
 ### 1. 個性化智能路由
 - 不再是one-size-fits-all，而是基於用戶特質的精準匹配
@@ -172,7 +189,7 @@ Interview Specialist Agent → 深度訪談 → 素材收集和結構化
 - 模組化設計，易於新增Framework Agents
 - 標準化通訊協議，確保Agents間順暢協作
 
-## 📊 預期系統效益
+## 預期系統效益
 
 ### 內容品質提升
 - **準確性：** 框架選擇準確率>95%
@@ -190,19 +207,19 @@ Interview Specialist Agent → 深度訪談 → 素材收集和結構化
 - **多維度分析：** 考慮個性、目標、平台、產業
 - **靈活組合策略：** 週期輪換、漏斗組合、品牌階段策略
 
-## 🚀 系統開發完成
+## 系統開發完成
 
-### ✅ 已完成所有核心組件
-1. ✅ 完成全部10個Framework Writing Agents
-2. ✅ 建立3個Optimization Agents (Content Optimizer, Platform Customizer, Quality Assurance)
-3. ✅ 撰寫完整的Workflow協調協議和系統整合指南
+### 已完成所有核心組件
+1. 完成全部10個Framework Writing Agents
+2. 建立3個Optimization Agents (Content Optimizer, Platform Customizer, Quality Assurance)
+3. 撰寫完整的Workflow協調協議和系統整合指南
 
-### 🎯 立即可執行任務
+### 立即可執行任務
 1. **系統整合測試**：與Word Weaver AI主系統整合
 2. **用戶體驗測試**：完整工作流程端到端測試
 3. **效能調優**：各Agent回應時間和品質優化
 
-### 🔮 未來擴展方向
+### 未來擴展方向
 1. **數據驅動優化**：基於實際使用數據優化各Agent表現
 2. **專業化擴展**：開發更多產業特化的Framework Agents
 3. **生態系統建設**：建立完整的內容創作和分發生態

@@ -40,9 +40,11 @@
     "interview_agents": {
       "interview_specialist_agent": {
         "role": "深度訪談專家",
-        "priority": 2,
+        "priority": 1,
         "required": true,
-        "capabilities": ["深度訪談", "素材提取", "洞察挖掘"]
+        "capabilities": ["深度訪談", "素材提取", "洞察挖掘", "通用訪談", "網路搜尋"],
+        "mandatory": true,
+        "always_first": true
       }
     },
     
@@ -132,28 +134,39 @@
   },
   
   "workflow_phases": {
-    "phase_1_discovery": {
-      "name": "發現階段",
-      "duration_minutes": 3,
-      "required_agents": ["master_workflow_agent", "framework_selector_agent", "audience_analyzer_agent"],
-      "optional_agents": ["content_gap_analyst_agent"],
-      "deliverables": ["用戶畫像", "框架選擇", "內容策略"]
+    "phase_1_mandatory_interview": {
+      "name": "強制真實用戶訪談階段",
+      "description": "MUST conduct real interactive interview, NEVER simulate",
+      "duration_minutes": 5,
+      "required_agents": ["interview_specialist_agent"],
+      "optional_agents": [],
+      "deliverables": ["真實訪談記錄", "用戶背景資料", "個人經驗素材"],
+      "critical": true,
+      "skip_allowed": false,
+      "interaction_required": true,
+      "simulation_allowed": false,
+      "real_user_interaction_mandatory": true
     },
     
-    "phase_2_research": {
-      "name": "研究階段", 
-      "duration_minutes": 8,
-      "required_agents": ["interview_specialist_agent"],
+    "phase_2_enhanced_discovery": {
+      "name": "強化分析階段",
+      "duration_minutes": 4,
+      "required_agents": ["framework_selector_agent", "audience_analyzer_agent"],
       "optional_agents": ["content_gap_analyst_agent"],
-      "deliverables": ["訪談記錄", "核心素材", "洞察提取"]
+      "deliverables": ["基於訪談的框架選擇", "受眾分析", "內容策略"],
+      "depends_on": ["phase_1_mandatory_interview"]
     },
     
     "phase_3_creation": {
-      "name": "創作階段",
-      "duration_minutes": 7,
+      "name": "創作與網路驗證階段",
+      "description": "Create content with mandatory web search verification",
+      "duration_minutes": 10,
       "required_agents": ["selected_framework_agent"],
       "optional_agents": ["style_adaptation_agent"],
-      "deliverables": ["初版內容", "結構框架", "核心訊息"]
+      "deliverables": ["初版內容", "結構框架", "核心訊息", "數據驗證報告", "參考資料來源"],
+      "verification_required": true,
+      "web_search_mandatory": true,
+      "data_sources_required": true
     },
     
     "phase_4_optimization": {
@@ -203,7 +216,8 @@
       "framework_adherence": 95,
       "style_consistency": 95,
       "goal_alignment": 90,
-      "readability_score": 85
+      "readability_score": 85,
+      "emoji_free": 100
     },
     
     "performance_targets": {
@@ -232,21 +246,64 @@
   "integration_points": {
     "word_weaver_ai": {
       "auth_system": "users/authentication",
-      "interview_system": "components/InterviewChat", 
+      "interview_system": "components/InterviewChat",
       "content_config": "components/ContentConfig",
       "generated_content": "components/GeneratedContent"
     },
-    
+
     "knowledge_base": {
       "frameworks_doc": "10_Diverse_Writing_Frameworks.md",
       "quick_guide": "Framework_Quick_Guide.md",
       "analysis_reports": ["PRD_Taiwan_Career_Influencer_Agent.md", "Content_Analysis_Report.md"],
       "system_prompts": "Agent_System_Prompt.md"
     },
-    
+
     "external_apis": {
       "gemini_api": "services/geminiService.ts",
       "humanization_service": "services/humanizeService.ts"
+    }
+  },
+
+  "shared_draft_configuration": {
+    "enabled": true,
+    "draft_file_path": "/Users/garyyang/Downloads/agents_workflow/Draft.md",
+    "backup_enabled": true,
+    "backup_directory": "/Users/garyyang/Downloads/agents_workflow/backups/",
+    "version_control": true,
+    "description": "集中式共享文檔，消除 agents 之間的上下文流失",
+
+    "section_mapping": {
+      "interview_specialist_agent": "phase_1.interview_insights",
+      "framework_selector_agent": "phase_1.framework_selection",
+      "audience_analyzer_agent": "phase_1.audience_analysis",
+      "content_gap_analyst_agent": "phase_2.content_strategy",
+      "lead_method_agent": "phase_3.content_creation",
+      "heart_method_agent": "phase_3.content_creation",
+      "solve_method_agent": "phase_3.content_creation",
+      "spark_method_agent": "phase_3.content_creation",
+      "teach_method_agent": "phase_3.content_creation",
+      "story_method_agent": "phase_3.content_creation",
+      "business_method_agent": "phase_3.content_creation",
+      "convert_method_agent": "phase_3.content_creation",
+      "personal_method_agent": "phase_3.content_creation",
+      "engage_method_agent": "phase_3.content_creation",
+      "content_optimizer_agent": "phase_4.optimization_analysis",
+      "platform_customizer_agent": "phase_4.platform_customization",
+      "quality_assurance_agent": "phase_4.quality_assurance"
+    },
+
+    "checkpoint_validation": {
+      "after_phase_1": ["framework_selection", "interview_insights", "audience_analysis"],
+      "after_phase_2": ["content_strategy"],
+      "after_phase_3": ["content_creation"],
+      "after_phase_4": ["optimization_analysis", "quality_assurance"]
+    },
+
+    "protocol_rules": {
+      "read_before_write": true,
+      "preserve_other_sections": true,
+      "include_agent_timestamp": true,
+      "single_source_of_truth": true
     }
   }
 }

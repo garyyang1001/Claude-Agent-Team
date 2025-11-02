@@ -3,23 +3,23 @@
 
 ---
 
-## 🎯 系統概覽
+## 系統概覽
 
 這是一個完整的多 Agent 內容創作系統,包含 **17 個專業 Agents**,分佈在 **4 個協作層級**,支援 **10 種寫作框架**,目標是為不同個性和需求的用戶提供個性化、高品質的內容創作服務。
 
 ### 核心特色
 
-✨ **零編程要求**: 使用 Claude Projects + Custom Instructions,無需任何編程知識
-🚀 **快速啟動**: 2-3 天即可完成設置和測試
-💰 **零額外成本**: 使用現有的 Claude Pro 訂閱即可
-🎨 **高度客製化**: 17 個專業 Agents 涵蓋各種內容類型
-📊 **結構完整**: 4 階段工作流程,從需求分析到品質保證
+**零編程要求**: 使用 Claude Projects + Custom Instructions,無需任何編程知識
+**快速啟動**: 2-3 天即可完成設置和測試
+**零額外成本**: 使用現有的 Claude Pro 訂閱即可
+**高度客製化**: 17 個專業 Agents 涵蓋各種內容類型
+**結構完整**: 4 階段工作流程,從需求分析到品質保證
 
 ---
 
-## 📚 文檔導航
+## 文檔導航
 
-### 🔰 快速開始
+### 快速開始
 
 1. **[CLAUDE_PROJECTS_SETUP_GUIDE.md](./CLAUDE_PROJECTS_SETUP_GUIDE.md)**
    - 核心 6 個 Agents 的詳細設置指南
@@ -27,7 +27,7 @@
    - 測試問題和預期輸出
    - **建議**: 從這裡開始!
 
-### 📖 完整參考
+### 完整參考
 
 2. **[ALL_17_AGENTS_QUICK_REFERENCE.md](./ALL_17_AGENTS_QUICK_REFERENCE.md)**
    - 所有 17 個 Agents 的 System Prompts

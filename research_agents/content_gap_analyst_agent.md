@@ -352,6 +352,14 @@ for each 主要話題:
 - 平衡機會與風險
 - 考慮長期發展潛力
 
+**CRITICAL INSTRUCTION: NEVER use emojis in any output. All content must be emoji-free.**
+
+**Web Search Integration:**
+- Use WebSearch for comprehensive competitive analysis and market research
+- Search for current content trends and gap identification in target markets
+- Find recent industry reports and market opportunity analysis
+- Research emerging topics and underserved content niches with real-time data
+
 **特別注意：**
 - 避免分析癱瘓，要給出明確建議
 - 考慮創作者的實際能力和資源

@@ -1,6 +1,6 @@
 # Claude Sub Agents Workflow - 協調協議與標準
 
-## 🎯 系統概述
+## 系統概述
 
 Claude Sub Agents Workflow 是一個專業的內容創作生態系統，通過多個專業化 AI Agents 的協作，為用戶提供個性化、高品質的內容創作服務。
 
@@ -30,7 +30,83 @@ Master Workflow Agent (總指揮官)
     └── Quality Assurance Agent
 ```
 
-## 🔄 工作流程協調
+## Draft.md 共享文檔協議
+
+### 協議概述
+所有 agents 通過集中式的 Draft.md 文件進行協作，確保：
+- **消除上下文流失**：每個 agent 都能看到完整的工作流程狀態
+- **完整可見性**：用戶可隨時查看 Draft.md 了解進度
+- **審計追踪**：完整記錄所有 agents 的貢獻
+- **單一真實來源**：Draft.md 是整個工作流的共享記憶
+
+### Draft.md 管理
+
+**文件位置：** `/Users/garyyang/Downloads/agents_workflow/Draft.md`
+
+**生命週期：**
+1. **初始化**（Master Workflow Agent）：清空並填充模板
+2. **漸進增強**（所有 Agents）：每個 agent 添加到指定章節
+3. **檢查點審查**（Master Workflow Agent）：在階段之間驗證完整性
+4. **最終化**（Master Workflow Agent）：標記為完成並提取最終內容
+
+**Agent 責任分配：**
+
+| Agent 角色 | 章節所有權 | 讀取前期內容 | 寫入輸出 |
+|------------|-----------|-------------|----------|
+| Master Workflow | 所有（協調者） | 是 | 是（元數據） |
+| Interview Specialist | Phase 1 - 訪談洞察 | 否（首個） | 是 |
+| Framework Selector | Phase 1 - 框架選擇 | 是 | 是 |
+| Audience Analyzer | Phase 1 - 受眾分析 | 是 | 是 |
+| Content Gap Analyst | Phase 2 - 內容策略 | 是 | 是 |
+| Framework Writers | Phase 3 - 內容創作 | 是 | 是 |
+| Content Optimizer | Phase 4 - 內容優化 | 是 | 是 |
+| Platform Customizer | Phase 4 - 平台定制 | 是 | 是 |
+| Quality Assurance | Phase 4 - 質量保證 | 是 | 是 |
+
+**衝突解決：**
+- 每個 agent 僅寫入其指定章節
+- Master Workflow Agent 具有覆蓋權限
+- 版本衝突觸發錯誤處理
+- Agent 必須先讀取再寫入以確保最新狀態
+
+**錯誤處理：**
+如果 Draft.md 損壞或不可用：
+1. Master Workflow Agent 創建備份
+2. 從模板重新初始化
+3. 請求受影響的 agents 重新運行
+4. 記錄事件以供審查
+
+### 工作流中的 Draft.md 使用
+
+**工作流開始：**
+- Master Workflow Agent 讀取並初始化 Draft.md
+- 設置 Workflow ID（格式：WF-[時間戳]）
+- 標記狀態為 "進行中"
+- 記錄工作流開始時間
+
+**Agent 調用標準：**
+每次調用 agent 時，Master Workflow Agent 必須：
+- 明確告知 Draft.md 的絕對路徑
+- 指定該 agent 負責的章節名稱
+- 要求先讀取 Draft.md 了解全局
+- 要求完成後更新 Draft.md
+- 強調保留其他 agents 的工作
+
+**階段轉換檢查點：**
+在每個階段結束時：
+1. Master Workflow Agent 讀取 Draft.md
+2. 驗證該階段所需章節已完成
+3. 在 Draft.md 工作流日誌記錄階段完成
+4. 為下一階段 agent 準備上下文摘要
+
+**工作流結束：**
+- 從 Draft.md 的 "## 最終內容" 章節讀取成果
+- 向用戶呈現完整內容
+- 詢問用戶是否保存 Draft.md
+
+---
+
+## 工作流程協調
 
 ### Phase 1: Discovery（發現階段）- 3-5分鐘
 **負責 Agent：** Master Workflow Agent + Research Agents
@@ -149,7 +225,7 @@ Master Workflow Agent (總指揮官)
 }
 ```
 
-## 🤖 Agent間通訊協議
+## Agent間通訊協議
 
 ### 資料傳遞標準
 **統一資料格式：**
@@ -205,7 +281,7 @@ Master Workflow Agent (總指揮官)
 - 素材不夠時自動延長訪談深度
 - 品質不達標時自動執行優化建議
 
-## 📊 效能監控標準
+## 效能監控標準
 
 ### 執行效率指標
 **時間控制標準：**
@@ -234,7 +310,7 @@ Master Workflow Agent (總指揮官)
 - Agent表現評分
 - 系統優化機會
 
-## 🔧 系統配置管理
+## 系統配置管理
 
 ### 環境配置
 **開發環境設定：**
@@ -280,7 +356,7 @@ Master Agent v1.0 兼容：
 └── Optimization Agents v1.0-1.1
 ```
 
-## 🚀 部署和擴展
+## 部署和擴展
 
 ### 系統部署架構
 **微服務架構：**
@@ -308,7 +384,7 @@ Master Agent v1.0 兼容：
 - 自動化測試驗證
 - 快速回滾機制
 
-## 📋 操作手冊
+## 操作手冊
 
 ### 日常維護檢查
 **每日檢查項目：**
@@ -340,7 +416,7 @@ Master Agent v1.0 兼容：
 
 ---
 
-## 📞 支援資源
+## 支援資源
 
 **技術支援：** [技術團隊聯絡方式]
 **用戶支援：** [客服團隊聯絡方式]
