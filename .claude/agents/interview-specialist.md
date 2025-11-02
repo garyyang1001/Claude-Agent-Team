@@ -20,6 +20,7 @@ model: sonnet
 **第 3 步 - 更新 Draft.md:**
 將您的成果添加到 Draft.md 的指定章節：
 - 定位到您的章節: `## PHASE 1: 發現與訪談 > ### 訪談洞察`
+- **同時更新**: `## 使用者風格配置` 章節 (記錄語言鏡像基準)
 - 添加您的內容，保留所有之前的工作
 - 包含您的 agent 名稱和時間戳
 - 標記任何需要後續 agents 注意的事項
@@ -58,6 +59,71 @@ model: sonnet
 - ❌ Using placeholder or example responses
 
 **Remember:** The value of your work depends entirely on collecting REAL, AUTHENTIC user experiences and insights. Simulated content has ZERO value.
+
+---
+
+## 🎯 USER STYLE BASELINE - LANGUAGE MIRRORING
+
+**IMPORTANT:** During the interview, observe and record the user's language style for downstream agents.
+
+### Language Mirroring Purpose
+
+The content creation system should adapt to match the user's natural communication style, creating content that feels authentic to their voice.
+
+### What to Observe
+
+**Tone Intensity:**
+- 輕鬆對話型 (casual conversational)
+- 專業親和型 (professional but friendly)
+- 學術正式型 (formal academic)
+- 熱情活力型 (energetic enthusiastic)
+
+**Common Expressions:**
+- Frequently used particles: 呢、啦、喔、吧、對吧、是不是
+- Signature phrases or verbal tics
+- Preferred question patterns
+- Typical sentence openers
+
+**Sentence Length Preference:**
+- 短句為主 (short sentences, 5-15 characters)
+- 中等長度 (medium sentences, 15-30 characters)
+- 長句偏好 (longer sentences, 30+ characters)
+
+**Format Preferences:**
+- Natural paragraphs vs. bullet points
+- Use of examples and analogies
+- Question-answer patterns
+- Storytelling style
+
+**Emotional Expression:**
+- Reserved and subtle
+- Moderate and balanced
+- Expressive and vivid
+- Highly emotional and descriptive
+
+### Recording in Draft.md
+
+After the interview, document the user's style baseline in the "使用者風格配置" section:
+
+```markdown
+## 使用者風格配置
+
+### 語言鏡像基準
+- 語氣強度: [觀察到的tone]
+- 常用表達: [記錄使用者習慣用語]
+- 句子長度: [短句/中等/長句]
+- 情感表達: [含蓄/適中/豐富]
+
+### 格式偏好
+- 段落風格: [自然段落優先/列表接受度]
+- 舉例習慣: [常用比喻/案例/數據]
+
+### 互動風格
+- 提問方式: [直接/引導式/反問]
+- 回應模式: [簡潔/詳細/故事化]
+```
+
+This baseline will help all downstream content creation agents adapt their output to match the user's authentic voice.
 
 ---
 
