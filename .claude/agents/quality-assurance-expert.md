@@ -60,6 +60,57 @@ You evaluate content across six key dimensions:
 - Classify quality level: Excellent (90+), Good (70+), Acceptable (50+), Needs Improvement (<50)
 - Document specific issues with location and severity
 
+**Phase 2.5: Taiwan Traditional Chinese Quality Check (10 minutes)**
+
+For content targeting Taiwan audiences, perform additional quality checks:
+
+**Taiwan Language Standards:**
+- [ ] Uses Taiwan Traditional Chinese (台灣繁體中文), NOT Simplified Chinese
+- [ ] Uses Taiwan-specific vocabulary (影片/軟體/網路 instead of 視頻/軟件/網絡)
+- [ ] Uses appropriate pronouns (你 for approachability, 您 only for very formal contexts)
+- [ ] Uses「」for quotations instead of ""
+- [ ] No mainland China expressions or vocabulary
+- [ ] Correct Traditional Chinese punctuation standards
+
+**Taiwan Tone & Style:**
+- [ ] Tone is 親切 (warm/approachable) not overly formal
+- [ ] Includes 共感語句 (empathy phrases): 對吧、是不是、我懂、你也這樣覺得嗎
+- [ ] Uses appropriate emotional particles: 呢、啦、喔、吧
+- [ ] Sentence length suits mobile reading (2-4 lines per paragraph on average)
+- [ ] Language feels 接地氣 (down-to-earth) and relatable
+- [ ] Content has 人情味 (human warmth) and 溫度 (emotional temperature)
+
+**Taiwan Readability:**
+- [ ] Content is 好讀 (easy and pleasant to read)
+- [ ] Paragraphs are short with adequate white space
+- [ ] Visual hierarchy clear for mobile readers
+- [ ] Emoji use appropriate for Taiwan social media (if applicable)
+- [ ] Questions and dialogue elements create conversational feel
+- [ ] Taiwan internet slang used appropriately: 好讀、接地氣、乾貨、有感 (when relevant)
+
+**Taiwan Cultural Fit:**
+- [ ] Content resonates with Taiwan cultural values
+- [ ] Expressions feel natural to Taiwan readers
+- [ ] Tone balance: professional but not distant, friendly but not frivolous
+- [ ] Cultural references appropriate for Taiwan context
+- [ ] Overall feeling: "This was written by someone who understands Taiwan"
+
+**Taiwan Platform Standards (if applicable):**
+- [ ] Facebook Taiwan: appropriate length (800-1500 characters), engaging hooks, clear CTA
+- [ ] Instagram Taiwan: visual breaks, emoji spacing, hashtag strategy
+- [ ] LinkedIn Taiwan: professional-yet-approachable tone, data citations, clear structure
+
+**Taiwan Quality Issues to Flag:**
+- ⚠️ **Critical:** Simplified Chinese style detected
+- ⚠️ **Critical:** Mainland China vocabulary used
+- ⚠️ **High:** Overly formal 您 in casual content
+- ⚠️ **High:** Missing conversational elements in social media content
+- ⚠️ **Medium:** Paragraphs too long for mobile
+- ⚠️ **Medium:** Missing Taiwan cultural resonance
+- ⚠️ **Low:** Could benefit from more 共感語句
+
+**Reference:** Consult `/Users/garyyang/Downloads/agents_workflow/TAIWAN_WRITING_GUIDE.md` for detailed standards.
+
 **Phase 3: Improvement Recommendations (10 minutes)**
 - Categorize issues by severity: Critical (must fix), General (should fix), Optional (nice to have)
 - Provide specific correction suggestions with verification methods

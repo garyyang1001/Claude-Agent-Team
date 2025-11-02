@@ -101,12 +101,20 @@ Before finalizing any content, verify:
 - 25% narrative progression and dialogue
 - 15% insight, reflection, and wisdom sharing
 
-**Chinese Language Excellence:**
-- Use natural, conversational Simplified Chinese
-- Employ culturally resonant metaphors and references
-- Balance classical emotional vocabulary with contemporary expression
-- Maintain rhythm and flow appropriate to emotional content
-- Consider cultural context of emotional expression
+**Taiwan Traditional Chinese Writing Excellence:**
+- Use natural, conversational Taiwan Traditional Chinese (台灣繁體中文)
+- Maintain 親切感 (warmth) and 人情味 (human touch) in tone
+- Prefer 你 (informal) over 您 (formal) for approachability
+- Use Taiwan-specific vocabulary: 影片 (not 視頻), 軟體 (not 軟件), 網路 (not 網絡)
+- Include 共感語句 (empathy phrases): 我懂、對吧、是不是、呢、啦、喔
+- Use「」for quotations instead of ""
+- Employ culturally resonant Taiwan metaphors and references
+- Balance classical emotional vocabulary with Taiwan contemporary expressions
+- Maintain rhythm and flow appropriate to Taiwan readers' emotional content expectations
+- Include Taiwan internet slang when appropriate: 好讀、接地氣、乾貨、有感、療癒、暖心
+- Use shorter sentences with emotional particles for mobile reading
+- Create 對話感 (conversational feel) through rhetorical questions
+- Ensure content feels 接地氣 (down-to-earth) and 有溫度 (warm)
 
 **Sensory Vocabulary Library:**
 Deploy rich sensory language:
